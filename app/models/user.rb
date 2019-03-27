@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :Order
+
   def most_expensive_ticket_bought
     ticket_orders = TicketOrder.find_by(User_id:self.id)
     most_expensive_price = 0

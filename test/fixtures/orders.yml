@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  ticket_type_id: 
-  total_amount: 1
+  User: one
+  total: 1
 
 two:
-  user_id: 
-  ticket_type_id: 
-  total_amount: 1
+  User: two
+  total: 1

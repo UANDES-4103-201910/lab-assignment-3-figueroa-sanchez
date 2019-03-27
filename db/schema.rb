@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_171636) do
+ActiveRecord::Schema.define(version: 2019_03_27_174214) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -36,24 +36,24 @@ ActiveRecord::Schema.define(version: 2019_03_27_171636) do
     t.index ["EventVenue_id"], name: "index_events_on_EventVenue_id"
   end
 
-  create_table "ticket_orders", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer "User_id"
-    t.integer "TicketType_id"
-    t.integer "total_amount"
+    t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["TicketType_id"], name: "index_ticket_orders_on_TicketType_id"
-    t.index ["User_id"], name: "index_ticket_orders_on_User_id"
+    t.index ["User_id"], name: "index_orders_on_User_id"
   end
 
-  create_table "ticket_types", force: :cascade do |t|
-    t.integer "Event_id"
+  create_table "tickets", force: :cascade do |t|
     t.integer "price"
     t.integer "Category_id"
+    t.integer "Event_id"
+    t.integer "Order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Category_id"], name: "index_ticket_types_on_Category_id"
-    t.index ["Event_id"], name: "index_ticket_types_on_Event_id"
+    t.index ["Category_id"], name: "index_tickets_on_Category_id"
+    t.index ["Event_id"], name: "index_tickets_on_Event_id"
+    t.index ["Order_id"], name: "index_tickets_on_Order_id"
   end
 
   create_table "users", force: :cascade do |t|
