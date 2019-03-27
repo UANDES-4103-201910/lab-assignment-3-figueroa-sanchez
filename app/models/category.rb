@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  def 
+  has_many :ticket_types
 end
