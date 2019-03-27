@@ -19,5 +19,7 @@ class User < ApplicationRecord
     most_expensive_price
   end
 
-  
+  def last_event
+
+  end
 end
