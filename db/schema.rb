@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_174214) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "venue_id"
   end
 
   create_table "events", force: :cascade do |t|
