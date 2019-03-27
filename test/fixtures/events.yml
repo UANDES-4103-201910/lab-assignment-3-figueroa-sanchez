@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2019-03-27 06:12:41
+  event_venue_id: 
+
+two:
+  name: MyString
+  description: MyText
+  date: 2019-03-27 06:12:41
+  event_venue_id: 
