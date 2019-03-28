@@ -5,7 +5,7 @@ class EventVenue < ApplicationRecord
       events = Event.where(EventVenue_id:self.id)
       tickets = Ticket.where(Event_id: events.ids)
       count = 0
-      for ticket in tickets do
+      tickets.each do |ticket|
         count += 1
       end
       count
