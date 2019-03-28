@@ -25,5 +25,6 @@ class User < ApplicationRecord
     orders_user=Order.where(user_id: self.id).select(:id)
     events_user = Ticket.where(order_id: orders_user).select(:event_id)
     last_event = Event.where(id:events_user).order(date: :desc).first
+    last_event
   end
 end
