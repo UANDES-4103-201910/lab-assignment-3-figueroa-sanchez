@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   has_many :tickets
-  belongs_to :event_venue, optional:true
+  belongs_to :event_venue
 
   def self.most_tickets_sold
     events_tickets_count = Event.joins(:tickets).group(:Event_id).count
