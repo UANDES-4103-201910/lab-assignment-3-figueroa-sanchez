@@ -11,3 +11,4 @@ class EventVenue < ApplicationRecord
       count
   end
 end
+S
