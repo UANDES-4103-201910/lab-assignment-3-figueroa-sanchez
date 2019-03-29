@@ -24,37 +24,36 @@ ActiveRecord::Schema.define(version: 2019_03_27_174214) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "venue_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "date"
-    t.integer "EventVenue_id"
+    t.integer "event_venue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["EventVenue_id"], name: "index_events_on_EventVenue_id"
+    t.index ["event_venue_id"], name: "index_events_on_event_venue_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "User_id"
+    t.integer "user_id"
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["User_id"], name: "index_orders_on_User_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "tickets", force: :cascade do |t|
     t.integer "price"
-    t.integer "Category_id"
-    t.integer "Event_id"
-    t.integer "Order_id"
+    t.integer "category_id"
+    t.integer "event_id"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Category_id"], name: "index_tickets_on_Category_id"
-    t.index ["Event_id"], name: "index_tickets_on_Event_id"
-    t.index ["Order_id"], name: "index_tickets_on_Order_id"
+    t.index ["category_id"], name: "index_tickets_on_category_id"
+    t.index ["event_id"], name: "index_tickets_on_event_id"
+    t.index ["order_id"], name: "index_tickets_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
